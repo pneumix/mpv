@@ -122,7 +122,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: mpv-${{ matrix.target }}
-          path: out/mpv
+          path: /Users/runner/work/mpv/mpv/build_waf/macos-12
 
   linux:
     runs-on: "ubuntu-22.04"
