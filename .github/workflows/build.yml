@@ -61,11 +61,6 @@ jobs:
         run: |
           cat ./build_waf/config.log
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: mpv-${{ matrix.target }}
-          path: mpv-git-*.zip
-
   macos:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -123,6 +118,11 @@ jobs:
         if: ${{ failure() && steps.build_waf.outcome == 'failure' }}
         run: |
           cat ./build_waf/config.log
+          
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mpv-${{ matrix.target }}
+          path: mpv-git-*.zip
 
   linux:
     runs-on: "ubuntu-22.04"
