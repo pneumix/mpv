@@ -122,7 +122,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: mpv-${{ matrix.target }}
-          path: mpv-git-*.zip
+          path: ${HOME}/out/mpv
 
   linux:
     runs-on: "ubuntu-22.04"
